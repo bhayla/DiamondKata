@@ -7,6 +7,7 @@ namespace Services;
 public class DiamondService : IDiamondService
 {
     private readonly char BASE_CHAR = 'A';
+    private readonly int BASE_CHAR_ASCII_INDEX = 65;
     private readonly char SPACER = ' ';
 
     public string? Create(char middleCharacter)
@@ -49,8 +50,8 @@ public class DiamondService : IDiamondService
         return topDiamond;
     }
 
-    private static int GetDiamondDepth(char upperChar)
+    private int GetDiamondDepth(char upperChar)
     {
-        return upperChar - 64;
+        return upperChar - (BASE_CHAR_ASCII_INDEX -1);
     }
 }
