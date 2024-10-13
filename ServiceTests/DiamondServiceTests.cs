@@ -72,10 +72,25 @@ public class DiamondServiceTests
         B_Diamond.AppendLine(" B B ");
         B_Diamond.Append("  A  ");
 
-        var testResult = B_Diamond.ToString();
-
         result.Should()
             .NotBeNull()
             .And.Be(B_Diamond.ToString());
+    }
+
+    [Theory]
+    [InlineData('a')]
+    [InlineData('c')]
+    public void DiamondService_CapitalLetterAndSmallLetter_ShouldBeSameResult(char character)
+    {
+        // Arrange
+        var ds = new DiamondService();
+
+        // Act 
+        var result1 = ds.Create(char.ToUpper(character));
+        var result2 = ds.Create(char.ToLower(character));
+
+        // Assert
+        result1.Should()
+            .Be(result2);
     }
 }
