@@ -16,7 +16,15 @@ while (true)
 
     if (char.TryParse(Console.ReadLine(), out var middleCharacter))
     {
+        Console.WriteLine();
+        Console.WriteLine(new string('*', (char.ToUpper(middleCharacter) - 64) * 2));
         Console.WriteLine(diamondService.Create(middleCharacter));
+        Console.WriteLine(new string('*', (char.ToUpper(middleCharacter) - 64) * 2));
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine("Error: Please enter a valid alphabet character");
     }
 }
 
