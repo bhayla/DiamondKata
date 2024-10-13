@@ -2,5 +2,5 @@
 
 public interface IDiamondService
 {
-    public string Create(char middleCharacter);
+    public string? Create(char middleCharacter);
 }
